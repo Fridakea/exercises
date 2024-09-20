@@ -99,15 +99,26 @@ body {
   .hidden {
     display: none;
   }
+
+  button {
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+  }
+
+  button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px hsl(250, 56%, 70%);
+  }
   
   #buttons {
     display: flex;
     justify-content: space-around;
     max-width: 50vw;
-  }
-  
-  #buttons.disabled button {
-    filter: grayscale(100%) brightness(.75);
+
+    & > *:disabled {
+        filter: grayscale(100%) brightness(.75);
+        cursor: default;
+    }
   }
   
   #buttons button {
@@ -115,7 +126,6 @@ body {
     border-radius: 10vw;
     width: 10vw;
     height: 10vw;
-    transition: filter .8s;
     color: #FFFFFF;
   }
   
@@ -129,4 +139,24 @@ body {
   
   button.scissors {
     background-image: url(./assets/button_scissors.png);
+  }
+
+  #play-again {
+    padding: 16px 48px;
+    background-color: hsl(250, 96%, 70%);
+    border-radius: 16px;
+    border: none;
+
+    position: absolute;
+    bottom: 10%;
+    right: 40%;
+
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 3vw;
+    letter-spacing: 5px;
+    color: hsl(250, 16%, 10%);
+  }
+
+  .opacity-0 {
+    opacity: 0;
   }
