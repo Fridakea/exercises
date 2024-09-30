@@ -11,17 +11,18 @@
 
 <body>
     <main>
-        <h1>Gæt et tal omvendt</h1>
+        <h1>Gæt et tal <span>omvendt</span></h1>
         <p>Tænk på et tal, så skal computeren prøve at gætte tallet vha. så få forsøg som muligt!</p>
         <p>Klik på start-knappen for at komme i gang!</p>
 
-        <div>
+        <div class="gameplay-container">
             <button id="start">Start spillet</button>
-            <div id="computer-guess">
+            <div id="computer-guess"></div>
+            <div class="gameplay-buttons">
+                <button id="too-low">For lavt</button>
+                <button id="too-high">For højt</button>
+                <button id="correct-guess">Det er det rigtige tal!</button>
             </div>
-            <button id="too-low">For lavt</button>
-            <button id="too-high">For højt</button>
-            <button id="correct-guess">Det er det rigtige tal!</button>
         </div>
     </main>
 </body>
