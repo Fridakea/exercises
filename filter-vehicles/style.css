@@ -1,0 +1,60 @@
+
+section {
+    width: fit-content;
+    margin-inline: auto;
+
+    font-family: sans-serif;
+    color: rgb(28, 59, 74);
+}
+
+table {
+    border-collapse: collapse;
+    border: 2px solid rgb(28, 59, 74);
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+caption {
+    caption-side: bottom;
+    padding: 10px;
+    font-weight: bold;
+}
+
+thead,
+tfoot {
+    font-size: 1rem;
+    background-color: rgb(228 240 245);
+}
+
+th,
+td {
+    border: 1px solid rgb(160 160 160);
+    padding: 8px 10px;
+}
+
+tbody>tr:nth-of-type(even) {
+    background-color: rgb(237 238 242);
+}
+
+.filter-container {
+    margin-bottom: 1em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+button {
+    padding: 8px 16px;
+    background-color: rgb(28, 59, 74);
+    border: none;
+    border-radius: 8px;
+    transition: 0.3s ease-in-out;
+    color: rgb(228 240 245);
+}
+
+button:hover {
+    transform: scale(1.075);
+    background-color: hsl(200, 60%, 25%);
+}
