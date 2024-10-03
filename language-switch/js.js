@@ -13,7 +13,9 @@ const texts = {
     ],
   },
 };
-let locale = "";
+let locale = "da";
+
+changeLanguage();
 
 document.querySelector(".language").addEventListener("change", (event) => {
   if (event.target.value === "danish") {
