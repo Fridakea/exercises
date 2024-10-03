@@ -5,23 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Language Switcher</title>
+
+    <link rel="stylesheet" href="main.css">
     <script type="module" src="js.js"></script>
 </head>
 
 <body>
-    <label>
-        Choose language:
-        <select name="language" class="language">
-            <option value="danish">Defult language</option>
-            <option value="danish">Danish</option>
-            <option value="deutsch">Deutsch</option>
-        </select>
-    </label>
+    <main>
+        <div class="header-container-styling">
+            <header class="header">UDSKIFTES</header>
 
-    <header class="header">UDSKIFTES</header>
-    <p>Content</p>
-    <div class="footer">UDSKIFTES</div>
+            <label>
+                Choose language:
+                <select name="language" class="language">
+                    <option value="danish">Defult language</option>
+                    <option value="danish">Danish</option>
+                    <option value="deutsch">Deutsch</option>
+                </select>
+            </label>
+        </div>
 
+        <p class="content">Content</p>
+
+        <div class="footer-container-styling">
+            <div class="footer">UDSKIFTES</div>
+        </div>
+    </main>
 </body>
 
 </html>
