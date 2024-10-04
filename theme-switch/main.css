@@ -1,0 +1,92 @@
+/* Data attributes to adjust the theme */
+[data-theme="light"] {
+  --bg-color-header: hsl(41, 40%, 92%);
+  --bg-color-main: hsl(41, 40%, 85%);
+  --bg-color-footer: hsl(41, 40%, 92%);
+  --color-text: hsl(41, 40%, 10%);
+  --color-body: #ffffff;
+}
+
+[data-theme="dark"] {
+  --bg-color-header: hsl(231, 15%, 15%);
+  --bg-color-main: hsl(231, 15%, 20%);
+  --bg-color-footer: hsl(231, 15%, 15%);
+  --color-text: hsl(231, 15%, 85%);
+  --color-body: #000000;
+}
+
+[data-theme="hawaii"] {
+  --bg-color-header: #ffa552;
+  --bg-color-main: hsl(41, 80%, 85%);
+  --bg-color-footer: #bdd6b0;
+  --color-text: hsl(0, 76%, 15%);
+  --color-body: hsl(206, 98%, 85%);
+}
+
+body {
+  background-color: var(--color-body);
+}
+
+.website-styling {
+  max-width: 1000px;
+  margin-inline: auto;
+  border: 1px solid var(--color-text);
+
+  color: var(--color-text);
+}
+
+header {
+  height: 15vh;
+  padding: 8px 16px;
+  background-color: var(--bg-color-header);
+
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  & h1 {
+    margin: 16px;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+  }
+
+  & label {
+    text-align: right;
+    align-self: center;
+
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+
+    & select {
+      padding: 6px 12px;
+      margin-left: 6px;
+      background-color: var(--bg-color-main);
+      border-radius: 16px;
+      color: var(--color-text);
+    }
+
+    & select:focus-visible {
+      border: 1px solid var(--color-text);
+    }
+  }
+}
+
+main {
+  height: 60vh;
+  padding: 8px 16px;
+  background-color: var(--bg-color-main);
+  border-top: 1px solid var(--color-text);
+  border-bottom: 1px solid var(--color-text);
+}
+
+footer {
+  height: 15vh;
+  padding: 8px 16px;
+  background-color: var(--bg-color-footer);
+
+  & h3 {
+    margin: 16px;
+    font-size: clamp(2rem, 5vw, 4rem);
+  }
+}
