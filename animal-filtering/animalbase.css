@@ -1,3 +1,12 @@
+main {
+  max-width: fit-content;
+  padding: 40px 80px;
+  margin-inline: auto;
+  border-radius: 40px;
+  background-color: hsl(0, 0%, 85%);
+  border: 1px solid black;
+}
+
 [data-action] {
   cursor: pointer;
 }
@@ -7,13 +16,24 @@
 }
 
 #list {
+  width: 350px;
   border-collapse: collapse;
-}
+  padding: 16px;
 
+  & thead tr th {
+    padding: 16px;
+    border: 1px solid black;
+  }
+
+  & tbody tr td {
+    padding: 8px;
+    border: 1px solid black;
+  }
+}
+/* 
 #list tbody tr td {
   padding: 4px;
-  
-}
+} */
 
 #list tbody tr:nth-child(odd) td {
   background-color: lightblue;
@@ -21,6 +41,5 @@
 }
 
 #list tbody tr:nth-child(even) td {
-
   border-right: rgb(171, 219, 252) 1px dotted;
 }
