@@ -13,9 +13,10 @@
 
 <script>
     document.addEventListener("mousemove", (e) => {
-        console.log("baggrunds farve skift", e.clientX, " / ", window.innerWidth, e.clientX / window.innerWidth * 100, "%");
+        const mouseXPercentage = e.clientX / window.innerWidth * 100;
+        console.log("baggrunds farve skift", e.clientX, " / ", window.innerWidth, mouseXPercentage, "%");
 
-        document.body.style.backgroundColor = `hsl(4, 100%, ${window.innerWidth, e.clientX / window.innerWidth * 100}%)`;
+        document.body.style.backgroundColor = `hsl(4, 100%, ${mouseXPercentage}%)`;
     });
 </script>
 
