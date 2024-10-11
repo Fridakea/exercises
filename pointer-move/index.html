@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+    document.addEventListener("mousemove", (e) => {
+        console.log("baggrunds farve skift", e.clientX, " / ", window.innerWidth, e.clientX / window.innerWidth * 100, "%");
+
+        document.body.style.backgroundColor = `hsl(4, 100%, ${window.innerWidth, e.clientX / window.innerWidth * 100}%)`;
+    });
+</script>
+
+</html>
