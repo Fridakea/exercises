@@ -99,24 +99,26 @@ function displayAnimal(animal) {
   clone.querySelector("[data-field=age]").textContent = animal.age;
 
   // TODO: Add event listener to click on star
-  const likeButtons = document.querySelectorAll(".like");
+  const likeButton = clone.querySelector("[data-field=star]");
 
-  likeButtons.forEach((likeButton) => {
-    let isLiked = false;
+  if (localStorage.getItem(`isliked-${animal.name}`) !== "true") {
+    likeButton.classList.add("unliked");
+  }
 
-    likeButton.addEventListener("mousedown", () => {
-      if (isLiked) {
-        console.log("liked");
-        likeButton.classList.remove("unliked");
+  likeButton.addEventListener("mousedown", () => {
+    const isLiked = localStorage.getItem(`isliked-${animal.name}`) === "true";
 
-        isLiked = false;
-      } else {
-        console.log("not liked");
-        likeButton.classList.add("unliked");
+    if (isLiked) {
+      console.log("liked");
+      likeButton.classList.add("unliked");
 
-        isLiked = true;
-      }
-    });
+      localStorage.setItem(`isliked-${animal.name}`, false);
+    } else {
+      console.log("not liked");
+      likeButton.classList.remove("unliked");
+
+      localStorage.setItem(`isliked-${animal.name}`, true);
+    }
   });
 
   // append clone to list
