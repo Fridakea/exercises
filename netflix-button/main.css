@@ -1,0 +1,27 @@
+button {
+  position: relative;
+  height: 50px;
+  width: 200px;
+  padding: 8px 16px;
+  background-color: red;
+  border-radius: 8px;
+  overflow: hidden;
+
+  & h3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    transform: translate(45px);
+  }
+
+  & #progress {
+    width: 0%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: green;
+  }
+}
