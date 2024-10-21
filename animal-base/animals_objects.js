@@ -4,8 +4,8 @@ window.addEventListener("DOMContentLoaded", start);
 
 const Animal = {
   name: "-default name-",
-  desc: "-no description",
-  type: "-no type",
+  desc: "-no description-",
+  type: "-no type-",
   age: 0,
 };
 
