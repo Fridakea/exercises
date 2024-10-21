@@ -3,9 +3,10 @@
   --color-secondary: #cacaca;
   --color-action: #72b7b3;
   --color-text: #131313;
-  --spacing-s: 16px;
-  --spacing-m: 24px;
-  --spacing-l: 40px;
+
+  --spacing-s: 8px;
+  --spacing-m: 16px;
+  --spacing-l: 24px;
 }
 
 main {
@@ -17,6 +18,11 @@ main {
   color: var(--color-text);
 }
 
+.description {
+  max-width: 700px;
+  margin-bottom: calc(var(--spacing-l) * 2);
+}
+
 .todo-container {
   display: flex;
   flex-direction: column;
@@ -25,7 +31,7 @@ main {
   & > * {
     flex: 1;
 
-    & h2 {
+    & h3 {
       text-align: center;
     }
   }
@@ -45,6 +51,12 @@ hr {
 }
 
 @media (min-width: 769px) {
+  :root {
+    --spacing-s: 16px;
+    --spacing-m: 24px;
+    --spacing-l: 40px;
+  }
+
   .todo-container {
     flex-direction: row;
   }
