@@ -11,8 +11,6 @@ const todoList = [];
 
 window.addEventListener("DOMContentLoaded", () => {
   document.getElementById("add-todo").addEventListener("mousedown", addTodo);
-
-  todoList.splice(0, 1);
 });
 
 function addTodo() {
@@ -42,34 +40,30 @@ function addTodo() {
       .querySelectorAll(".todo-container .todo-list ul li")
       .forEach((liElement) => {
         liElement.addEventListener("mousedown", () => {
-          if (element.done === false) {
-            console.log(element.task, "done");
-            liElement.style.textDecoration = "line-through";
-
-            element = {
-              done: true,
-            };
-          } else {
+          if (element.done === true) {
             console.log(element.task, "not done");
             liElement.style.textDecoration = "none";
 
-            element = {
-              done: false,
-            };
+            element.done = false;
+          } else {
+            console.log(element.task, "done");
+            liElement.style.textDecoration = "line-through";
+
+            element.done = true;
           }
         });
       });
 
-    document
-      .querySelector(`.${element.task}`)
-      .addEventListener("mousedown", () => {
-        console.log("slet");
-        console.log(todoList);
+    // document
+    //   .querySelector(`.${element.task}`)
+    //   .addEventListener("mousedown", () => {
+    //     console.log("slet");
+    //     console.log(todoList);
 
-        // todoList.splice(0, 1);
+    //     // todoList.splice(0, 1);
 
-        todoList.push(todo);
-      });
+    //     todoList.push(todo);
+    //   });
   });
 
   // document
