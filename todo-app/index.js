@@ -2,7 +2,11 @@
 
 let randomId = self.crypto.randomUUID();
 
-let todo = {};
+let todo = {
+  id: 0,
+  task: "-ingenting-",
+  done: false,
+};
 const todoList = [];
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -21,7 +25,6 @@ function addTodo() {
   todo = {
     id: randomId,
     task: inputValue,
-    done: false,
   };
 
   todoList.push(todo);
@@ -42,23 +45,31 @@ function addTodo() {
           if (element.done === false) {
             console.log(element.task, "done");
             liElement.style.textDecoration = "line-through";
-            todo.done = true;
+
+            element = {
+              done: true,
+            };
           } else {
             console.log(element.task, "not done");
             liElement.style.textDecoration = "none";
-            todo.done = false;
+
+            element = {
+              done: false,
+            };
           }
         });
       });
 
-    document.querySelector("button").addEventListener("mousedown", () => {
-      console.log("slet");
-      console.log(todoList.element);
+    document
+      .querySelector(`.${element.task}`)
+      .addEventListener("mousedown", () => {
+        console.log("slet");
+        console.log(todoList);
 
-      // todoList.splice(0, 1);
+        // todoList.splice(0, 1);
 
-      todoList.push(todo);
-    });
+        todoList.push(todo);
+      });
   });
 
   // document
