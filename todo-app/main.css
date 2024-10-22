@@ -49,11 +49,22 @@ main {
       text-align: center;
     }
 
+    & ul {
+      margin: 0;
+    }
+
     & li {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
+      width: 97%;
+      margin-left: -10px;
+      padding: var(--spacing-s) 0;
+      border-bottom: 1px solid black;
       cursor: pointer;
+    }
+
+    & span {
+      margin-left: 10px;
+      display: inline-block;
+      width: 90%;
     }
   }
 }
@@ -72,5 +83,9 @@ hr {
 
   .todo-container {
     flex-direction: row;
+
+    & span {
+      width: 93%;
+    }
   }
 }
