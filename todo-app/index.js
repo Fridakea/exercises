@@ -33,11 +33,13 @@ function drawTodoList() {
     li.appendChild(span);
     li.appendChild(button);
 
+    // Adding eventlistener to the span inside the li, that makes it possible to mark todo as done
     span.addEventListener("mousedown", () => {
       object.done = !object.done; // toggle true/false
       span.style.textDecoration = object.done ? "line-through" : "none";
     });
 
+    // Adding eventlistener to the button inside the li, that makes it possible to delete todo
     button.addEventListener("mousedown", () => {
       console.log(todoList.indexOf(object));
       todoList.splice(todoList.indexOf(object), 1);
