@@ -15,9 +15,7 @@ function drawTodoList() {
   ul.innerHTML = "";
 
   todoList.forEach((object) => {
-    // instead of doing this
-    //ul.innerHTML += `<li id="${object.id}"><span>${object.task}</span><button>x</button</li>`;
-    // I do this:
+    // instead of doing this - ul.innerHTML += `<li id="${object.id}"><span>${object.task}</span><button>x</button</li>`; - I do this:
 
     // Creates li element with object.id as it's id
     const li = document.createElement("li");
