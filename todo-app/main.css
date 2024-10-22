@@ -59,6 +59,7 @@ main {
       padding: var(--spacing-s) 0;
       border-bottom: 1px solid black;
       cursor: pointer;
+      user-select: none;
     }
 
     & span {

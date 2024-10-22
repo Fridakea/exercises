@@ -1,3 +1,9 @@
+// TODO
+// 1. implementer "number" i objetet
+// 2. Gem todo'en i local storage
+// 3. Sæt fokus på input feltet / få det til at virke
+// 4. tilføj noget styling som gør det bedre
+
 "use strict";
 
 const todoList = [];
@@ -15,8 +21,7 @@ function drawTodoList() {
   ul.innerHTML = "";
 
   todoList.forEach((object) => {
-    // instead of doing this - ul.innerHTML += `<li id="${object.id}"><span>${object.task}</span><button>x</button</li>`; - I do this:
-
+    // instead of doing this - ul.innerHTML += `<li id="${object.id}"><span>${object.task}</span><button>x</button</li>`; - I do this (line 19-33)
     // Creates li element with object.id as it's id
     const li = document.createElement("li");
     li.id = object.id;
@@ -24,6 +29,7 @@ function drawTodoList() {
     // Creates span and sets it's textcontent to object.task
     const span = document.createElement("span");
     span.textContent = object.task;
+    span.style.textDecoration = object.done ? "line-through" : "none";
 
     const button = document.createElement("button");
     button.textContent = "x";
@@ -37,6 +43,9 @@ function drawTodoList() {
     span.addEventListener("mousedown", () => {
       object.done = !object.done; // toggle true/false
       span.style.textDecoration = object.done ? "line-through" : "none";
+
+      console.log(object.done);
+      console.log(todoList);
     });
 
     // Adding eventlistener to the button inside the li, that makes it possible to delete todo
@@ -55,6 +64,11 @@ function addTodo() {
   const input = document.querySelector("#todo-string");
   const inputValue = input.value;
 
+  // If the value of the input is empty, don't add it is a todo
+  if (inputValue === "") {
+    return drawTodoList();
+  }
+
   const todo = {
     id: self.crypto.randomUUID(),
     task: inputValue,
@@ -63,5 +77,8 @@ function addTodo() {
 
   todoList.push(todo);
   console.log("todoList:", todoList);
+
+  // Removes text from the input, so another todo can be made right away
+  input.value = "";
   drawTodoList();
 }
