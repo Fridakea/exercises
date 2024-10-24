@@ -18,8 +18,17 @@
                 elementer ved at klikke på krydset ud for todo'en og når de fuldført, klikker du blot på dem så flyttes
                 markeres de som færdige. Hvis du fortryder klikker du bare på todo'en igen.
             </p>
-            <div>
-                <input type="text" id="todo-string" name="todo" required>
+            <div class="add-todo-container">
+                <div>
+                    <label for="todo-number">Antal:</label>
+                    <input type="number" min="0" id="todo-number" name="todo" required>
+                </div>
+
+                <div>
+                    <label for="todo-string">Vare:</label>
+                    <input type="text" id="todo-string" name="todo" required>
+                </div>
+
                 <button id="add-todo">Tilføj Todo</button>
             </div>
         </div>

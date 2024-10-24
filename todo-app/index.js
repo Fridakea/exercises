@@ -6,14 +6,16 @@
 
 "use strict";
 
-const todoList = [];
+let todoList = [];
 
 let ul;
 
 window.addEventListener("DOMContentLoaded", () => {
   ul = document.querySelector(".todo-list ul");
-
   document.getElementById("add-todo").addEventListener("mousedown", addTodo);
+
+  loadList();
+  drawTodoList();
 });
 
 function drawTodoList() {
@@ -28,7 +30,7 @@ function drawTodoList() {
 
     // Creates span and sets it's textcontent to object.task
     const span = document.createElement("span");
-    span.textContent = object.task;
+    span.textContent = `${object.number ?? ""} ${object.task}`;
     span.style.textDecoration = object.done ? "line-through" : "none";
 
     const button = document.createElement("button");
@@ -42,6 +44,8 @@ function drawTodoList() {
     // Adding eventlistener to the span inside the li, that makes it possible to mark todo as done
     span.addEventListener("mousedown", () => {
       object.done = !object.done; // toggle true/false
+      saveList();
+
       span.style.textDecoration = object.done ? "line-through" : "none";
 
       console.log(object.done);
@@ -52,33 +56,59 @@ function drawTodoList() {
     button.addEventListener("mousedown", () => {
       console.log(todoList.indexOf(object));
       todoList.splice(todoList.indexOf(object), 1);
+      saveList();
       drawTodoList();
     });
+
+    console.log(object);
   });
 }
 
 function addTodo() {
   console.log("Todo added");
 
-  // The value of the text that will become a todo
-  const input = document.querySelector("#todo-string");
-  const inputValue = input.value;
+  // The value of the text in the input number, will become a todo
+  const inputNumber = document.querySelector("#todo-number");
+  let inputNumberValue = parseInt(inputNumber.value);
+
+  // If the value of the input is empty, set it as 1
+  if (isNaN(inputNumberValue)) {
+    inputNumberValue = null;
+  }
+
+  // The value of the text in the input string, will become a todo
+  const inputString = document.querySelector("#todo-string");
+  const inputStringValue = inputString.value;
 
   // If the value of the input is empty, don't add it is a todo
-  if (inputValue === "") {
-    return drawTodoList();
+  if (inputStringValue === "") {
+    return;
   }
 
   const todo = {
     id: self.crypto.randomUUID(),
-    task: inputValue,
+    number: inputNumberValue,
+    task: inputStringValue,
     done: false,
   };
 
+  console.log(typeof todo.number);
+
   todoList.push(todo);
-  console.log("todoList:", todoList);
+  saveList();
 
   // Removes text from the input, so another todo can be made right away
-  input.value = "";
+  inputNumber.value = "";
+  inputString.value = "";
+
   drawTodoList();
+}
+
+function saveList() {
+  localStorage.setItem("todos", JSON.stringify(todoList));
+}
+
+function loadList() {
+  todoList = localStorage.getItem("todos");
+  todoList = JSON.parse(todoList);
 }

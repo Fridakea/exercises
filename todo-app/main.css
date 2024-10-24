@@ -39,6 +39,12 @@ main {
   }
 }
 
+.add-todo-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-s);
+}
+
 .todo-container {
   & > * {
     padding: var(--spacing-m);
