@@ -45,8 +45,6 @@ function drawTodoList() {
       saveList();
 
       span.style.textDecoration = object.done ? "line-through" : "none";
-
-      console.log(object.done);
       console.log(todoList);
     });
 
@@ -54,11 +52,10 @@ function drawTodoList() {
     button.addEventListener("mousedown", () => {
       console.log(todoList.indexOf(object));
       todoList.splice(todoList.indexOf(object), 1);
+
       saveList();
       drawTodoList();
     });
-
-    console.log(object);
   });
 }
 
@@ -89,8 +86,6 @@ function addTodo() {
     task: inputStringValue,
     done: false,
   };
-
-  console.log(typeof todo.number);
 
   todoList.push(todo);
   saveList();
