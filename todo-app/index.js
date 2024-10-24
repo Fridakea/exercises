@@ -1,6 +1,4 @@
 // TODO
-// 1. implementer "number" i objetet
-// 2. Gem todo'en i local storage
 // 3. Sæt fokus på input feltet / få det til at virke
 // 4. tilføj noget styling som gør det bedre
 
