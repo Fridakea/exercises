@@ -1,7 +1,3 @@
-// TODO
-// 3. Sæt fokus på input feltet / få det til at virke
-// 4. tilføj noget styling som gør det bedre
-
 "use strict";
 
 let todoList = [];
@@ -102,6 +98,6 @@ function saveList() {
 }
 
 function loadList() {
-  todoList = localStorage.getItem("todos");
+  todoList = localStorage.getItem("todos") ?? [];
   todoList = JSON.parse(todoList);
 }
