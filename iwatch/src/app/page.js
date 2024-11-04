@@ -25,7 +25,7 @@ export default function Home() {
         </div>
 
       <div className="flex-1">
-        <ProductVariantSection img={navy}/>
+        <ProductVariantSection />
         </div>
       </div>
       </div>
