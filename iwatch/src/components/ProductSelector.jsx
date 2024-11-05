@@ -16,7 +16,7 @@ export const ProductSelector = () => {
 
     return (
         <>
-            <div className='mb-16 flex flex-row items-center'>
+            <div className='mb-24 flex flex-row items-center'>
                 <ProductCard selectedWatch={seletedWatchIndex} />
 
                 <div className='flex flex-col gap-4 items-center'>

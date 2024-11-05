@@ -8,7 +8,7 @@ export const Navigation = () => {
     const navLinkStyling = "px-7 py-1 text-white";
 
     return (
-        <nav className="flex flex-row justify-between items-center mb-16">
+        <nav className="flex flex-row justify-between items-center mb-24">
             <a href="/"><IoLogoApple className="w-12 h-12"/></a>
 
             <div className="flex flex-row gap-4 text-lg">

@@ -12,12 +12,12 @@ export default function Home() {
       <div className="max-w-[1200px] mx-auto p-10">
         <Navigation />
 
-        <section className="mb-24 flex flex-row gap-12">
+        <section className="mb-32 flex flex-row gap-8">
           <div className="flex-[1.45] text-white">
             <h1 className="mt-24 mb-20 text-[54px] leading-snug"><strong>The Perfect Moment</strong> Between Past And Future.</h1>
             <Button text="Buy Now"/>
 
-            <div className="mt-32 flex flex-row gap-4 items-center text-white">
+            <div className="mt-40 flex flex-row gap-4 items-center text-white">
               <IoIosArrowRoundBack className="w-6 h-6 text-white" />
               1
               <IoIosArrowRoundForward className="w-6 h-6 text-white" />
