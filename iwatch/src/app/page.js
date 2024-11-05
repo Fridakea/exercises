@@ -1,3 +1,4 @@
+import { AccordionSection } from "@/components/AccordionSection";
 import { Button } from "@/components/Button";
 import { Navigation } from "@/components/Navigation";
 import { ProductSelector } from "@/components/ProductSelector";
@@ -11,12 +12,12 @@ export default function Home() {
       <div className="max-w-[1200px] mx-auto p-10">
         <Navigation />
 
-        <div className="flex flex-row gap-12">
-          <div className="flex-[1.45]">
-            <h1 className="mt-24 mb-16 text-[54px] text-white leading-normal"><strong>The Perfect Moment</strong> Between Past And Future.</h1>
+        <section className="mb-24 flex flex-row gap-12">
+          <div className="flex-[1.45] text-white">
+            <h1 className="mt-24 mb-20 text-[54px] leading-snug"><strong>The Perfect Moment</strong> Between Past And Future.</h1>
             <Button text="Buy Now"/>
 
-            <div className="mt-24 flex flex-row gap-4 items-center text-white">
+            <div className="mt-32 flex flex-row gap-4 items-center text-white">
               <IoIosArrowRoundBack className="w-6 h-6 text-white" />
               1
               <IoIosArrowRoundForward className="w-6 h-6 text-white" />
@@ -26,7 +27,9 @@ export default function Home() {
           <div className="flex-1">
             <ProductSelector />
           </div>
-        </div>
+        </section>
+
+        <AccordionSection />
       </div>
     </div>
   );

@@ -15,7 +15,7 @@ export const ProductSelector = () => {
     console.log(seletedWatchIndex);
 
     return (
-        <section>
+        <>
             <div className='mb-16 flex flex-row items-center'>
                 <ProductCard selectedWatch={seletedWatchIndex} />
 
@@ -31,6 +31,6 @@ export const ProductSelector = () => {
                 <VariantSelector bgColor='rgba(106,221,204,0.6)' img={mint} imgAlt='mint' onClick={() => setSelectedWatchIndex(1)} />
                 <VariantSelector bgColor='rgba(249,205,196,0.6)' img={ocean} imgAlt='ocean' onClick={() => setSelectedWatchIndex(2)} />
             </div>
-        </section>
+        </>
     )
 }
