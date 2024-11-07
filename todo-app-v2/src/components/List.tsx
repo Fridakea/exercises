@@ -1,21 +1,29 @@
+"use client";
+
 import { FC } from "react";
+import { Todo } from "./ToDoApp";
 
 type Props = {
-  todos: string[];
+  todos: Todo[];
+  toggleDone: (id: string) => void;
+  deleteTodo: (id: string) => void;
 };
 
-export const List: FC<Props> = ({ todos }) => {
+export const List: FC<Props> = ({ todos, toggleDone, deleteTodo }) => {
+  const completeTaskStyling = "bg-red-500";
+
   return (
-    <>
+    <ul>
       {todos.map((todo) => (
-        <div className="flex flex-row justify-between">
-          <p>{todos}</p>
+        <li key={todo.id} className="flex flex-row justify-between">
+          {todo.task}
+          {todo.complete ? "D" : ""}
           <div className="flex flex-row">
-            <button>Complete</button>
-            <button>Delete</button>
+            <button onClick={() => toggleDone(todo.id)}>Complete</button>
+            <button onClick={() => deleteTodo(todo.id)}>Delete</button>
           </div>
-        </div>
+        </li>
       ))}
-    </>
+    </ul>
   );
 };
