@@ -1,11 +1,11 @@
-export default async function Home() {
+export default async function Page() {
   let response = await fetch("https://dummyjson.com/products");
   let data = await response.json();
   return (
-    <div>
+    <ul>
       {data.products.map((product) => (
-        <p>{product.title}</p>
+        <li key={product.id}>{product.title}</li>
       ))}
-    </div>
+    </ul>
   );
 }
