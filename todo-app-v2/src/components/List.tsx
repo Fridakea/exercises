@@ -1,6 +1,7 @@
 "use client";
 
 import { FC } from "react";
+import { twMerge } from "tailwind-merge";
 import { Todo } from "./ToDoApp";
 
 type Props = {
@@ -10,14 +11,15 @@ type Props = {
 };
 
 export const List: FC<Props> = ({ todos, toggleDone, deleteTodo }) => {
-  const completeTaskStyling = "bg-red-500";
+  const completeTaskStyling = "line-through";
 
   return (
     <ul>
       {todos.map((todo) => (
         <li key={todo.id} className="flex flex-row justify-between">
-          {todo.task}
-          {todo.complete ? "D" : ""}
+          <span className={twMerge(todo.complete ? completeTaskStyling : "")}>
+            {todo.task}
+          </span>
           <div className="flex flex-row">
             <button onClick={() => toggleDone(todo.id)}>Complete</button>
             <button onClick={() => deleteTodo(todo.id)}>Delete</button>

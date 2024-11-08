@@ -34,6 +34,10 @@ export const ToDoApp: FC = () => {
     );
   };
 
+  const deleteTodo = (id: string) => {
+    setTodoList(todoList.filter((item) => item.id !== id));
+  };
+
   console.log(todoList);
 
   return (
@@ -45,7 +49,7 @@ export const ToDoApp: FC = () => {
         <List
           todos={todoList}
           toggleDone={toggleDone}
-          deleteTodo={(id) => console.log("delete todo with id ", id)}
+          deleteTodo={deleteTodo}
         />
       </div>
     </section>
