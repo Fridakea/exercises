@@ -4,7 +4,7 @@ export default async function Home() {
   return (
     <div>
       {data.products.map((product) => (
-        <p>{product.title}</p>
+        <p key={product.id}>{product.title}</p>
       ))}
     </div>
   );
