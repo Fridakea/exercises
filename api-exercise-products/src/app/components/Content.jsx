@@ -9,14 +9,24 @@ export const Content = () => {
   if (isLoading) return <Spinner />;
 
   return (
-    <div>
+    <div className="flex flex-row flex-wrap gap-6">
       {products.products.map((product) => (
-        <div key={product.id} className="bg-red-400">
-          <h1>{product.title}</h1>
+        <div
+          key={product.id}
+          className="w-[250px] px-4 py-8 bg-gray-800 rounded-xl flex flex-col grow"
+        >
+          <Image
+            className="w-[75%] self-center"
+            src={product.images[0]}
+            alt="product"
+            width={48}
+            height={48}
+          />
+          {/* {product.images.map((productImage) => (
+            <Image src={productImage} alt="product" width={96} height={96} />
+          ))} */}
+          <h2 className="text-xl font-bold mb-2">{product.title}</h2>
           <p>{product.description}</p>
-          {product.images.map((productImage) => (
-            <Image src={productImage} alt="product" width={48} height={48} />
-          ))}
         </div>
       ))}
     </div>
