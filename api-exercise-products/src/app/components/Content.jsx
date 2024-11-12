@@ -11,7 +11,8 @@ export const Content = () => {
   return (
     <div className="flex flex-row flex-wrap gap-6">
       {products.products.map((product) => (
-        <div
+        <a
+          href={`/products/${product.id}`}
           key={product.id}
           className="w-[250px] px-4 py-8 bg-gray-800 rounded-xl flex flex-col grow"
         >
@@ -26,8 +27,7 @@ export const Content = () => {
             <Image src={productImage} alt="product" width={96} height={96} />
           ))} */}
           <h2 className="text-xl font-bold mb-2">{product.title}</h2>
-          <p>{product.description}</p>
-        </div>
+        </a>
       ))}
     </div>
   );
