@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import { useProducts } from "../fetch";
 import { Spinner } from "./Spinner";

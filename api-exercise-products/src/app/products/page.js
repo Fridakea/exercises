@@ -1,4 +1,4 @@
-import "../app/globals.css";
+import "@/app/globals.css";
 import { Content } from "@/app/components/Content";
 
 const ShowProductsPages = () => {
