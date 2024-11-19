@@ -14,7 +14,7 @@ export const AccordionSection = () => {
   const faqImageStyle = "w-full h-full object-cover";
 
   return (
-    <section className="px-20 py-16 bg-[#DEE7ED] rounded-3xl text-[#243642]">
+    <section className="px-20 py-16 mb-32 bg-[#DEE7ED] rounded-3xl text-[#243642]">
       <h1 className="text-[54px] leading-2 font-bold">
         Frequently Asked Questions
       </h1>
