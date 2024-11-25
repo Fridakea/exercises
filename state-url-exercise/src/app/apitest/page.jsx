@@ -1,4 +1,5 @@
 import { getSubs, postSub } from "@/lib/supabase";
+import { revalidatePath } from "next/cache";
 
 // , postSub, patchSub, deleteSub
 
@@ -13,6 +14,8 @@ async function page() {
     };
 
     await postSub(data);
+
+    revalidatePath("/apitest");
   }
 
   return (
@@ -21,16 +24,26 @@ async function page() {
         action={send}
         className="w-fit mt-6 mx-auto px-8 py-6 bg-gray-900 rounded-xl flex flex-col items-start *:mb-6"
       >
-        <h2 className="text-2xl font-semibold">Subscribe</h2>
+        <h2 className="text-2xl font-semibold">Sign up</h2>
 
         <div className="flex flex-col gap-2">
           <label htmlFor="name">Name</label>
-          <input type="text" id="name" name="name" className="rounded-sm" />
+          <input
+            type="text"
+            id="name"
+            name="name"
+            className="rounded-sm text-black"
+          />
         </div>
 
         <div className="flex flex-col gap-2">
           <label htmlFor="email">Email</label>
-          <input type="text" id="email" name="email" className="rounded-sm" />
+          <input
+            type="text"
+            id="email"
+            name="email"
+            className="rounded-sm text-black"
+          />
         </div>
 
         <button className="px-4 py-2 bg-gray-600 rounded-md">Subscribe</button>
