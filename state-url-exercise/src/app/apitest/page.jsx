@@ -1,5 +1,8 @@
 import { getSubs, postSub } from "@/lib/supabase";
 import { revalidatePath } from "next/cache";
+import Link from "next/link";
+
+import { IoIosArrowForward } from "react-icons/io";
 
 // , postSub, patchSub, deleteSub
 
@@ -18,13 +21,15 @@ async function page() {
     revalidatePath("/apitest");
   }
 
+  console.log(subscribers);
+
   return (
-    <section>
+    <section className="min-h-screen max-w-[1000] mx-auto flex flex-col">
       <form
         action={send}
-        className="w-fit mt-6 mx-auto px-8 py-6 bg-gray-900 rounded-xl flex flex-col items-start *:mb-6"
+        className="w-fit h-fit my-32 mx-auto px-8 py-6 bg-gray-100 rounded-xl flex flex-col items-start shadow-lg *:mb-6"
       >
-        <h2 className="text-2xl font-semibold">Sign up</h2>
+        <h2 className="text-2xl font-bold text-emerald-900">Sign up</h2>
 
         <div className="flex flex-col gap-2">
           <label htmlFor="name">Name</label>
@@ -32,7 +37,7 @@ async function page() {
             type="text"
             id="name"
             name="name"
-            className="rounded-sm text-black"
+            className="rounded-sm text-emerald-950"
           />
         </div>
 
@@ -42,20 +47,32 @@ async function page() {
             type="text"
             id="email"
             name="email"
-            className="rounded-sm text-black"
+            className="rounded-sm text-emerald-950"
           />
         </div>
 
-        <button className="px-4 py-2 bg-gray-600 rounded-md">Subscribe</button>
+        <button className="px-6 py-2 bg-emerald-700 rounded-md text-white tracking-wider transition-all duration-300 hover:bg-emerald-900">
+          Subscribe
+        </button>
       </form>
 
-      <article className="w-fit mt-6 mx-auto">
-        <h2>All subscribers</h2>
-        <ul>
+      <article className="mt-6 mx-auto">
+        <h2 className="text-2xl font-bold text-emerald-900 mb-8">
+          All subscribers
+        </h2>
+        <ul className="p-10 bg-gray-50 rounded-2xl grid grid-cols-3 gap-4">
           {subscribers.map((sub) => (
-            <li key={sub.id}>
-              {sub.name} - {sub.email}
-            </li>
+            <Link
+              key={sub.id}
+              href={`/update/${sub.id}`}
+              className="px-6 py-4 bg-white shadow-sm rounded-md transition-all duration-300 flex justify-between items-center hover:bg-emerald-600/10"
+            >
+              <li>
+                <h3 className="text-lg">{sub.name}</h3>
+                <p className="text-sm text-black/75">{sub.email}</p>
+              </li>
+              <IoIosArrowForward />
+            </Link>
           ))}
         </ul>
       </article>

@@ -1,5 +1,6 @@
 const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+const subscribtionsUrl = url + "/subscribtions";
 
 const headersList = {
   Accept: "application/json",
@@ -9,22 +10,20 @@ const headersList = {
 };
 
 export async function getSubs() {
-  let response = await fetch(url, {
+  const response = await fetch(subscribtionsUrl, {
     method: "GET",
     headers: headersList,
   });
 
-  let data = await response.json();
-  return data;
+  return await response.json();
 }
 
 export async function postSub(subData) {
-  let response = await fetch(url, {
+  const response = await fetch(subscribtionsUrl, {
     method: "POST",
     headers: headersList,
     body: JSON.stringify(subData),
   });
 
-  let data = await response.json();
-  return data;
+  return await response.json();
 }
