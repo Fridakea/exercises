@@ -27,7 +27,7 @@
 import React from "react";
 
 // importing the custom hook
-import useCounter from "./useCounter";
+import useCounter from "@/hooks/useCounter";
 
 function Counter() {
   const { incrementCounter, counter } = useCounter(0);
