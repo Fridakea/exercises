@@ -2,19 +2,13 @@
 
 import { Button } from "@/components/Button";
 import { LayoutWrapper } from "@/components/LayoutWrapper";
-import { redirect } from "next/dist/server/api-utils";
-import { useState } from "react";
 
-export default function Home() {
-  const [amount, setAmount] = useState(1);
-
-  function FormAction() {
-    redirect("/");
-  }
+export default function Page() {
+  let amount = parseInt(params.get("amount"), 10);
 
   return (
     <LayoutWrapper>
-      <form action={FormAction}>
+      <form>
         <fieldset className="flex flex-col items-center justify-center">
           <legend className="mb-6 text-2xl font-bold text-center">
             Formular step 1

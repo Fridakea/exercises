@@ -8,8 +8,6 @@ async function page({ params }) {
 
   console.log("subscriber: ", subscriber);
 
-  // subscriber.map((sub) => console.log("sub specifik", sub.name));
-
   async function updateSub(formData) {
     "use server";
     const data = {
